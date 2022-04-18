@@ -7,7 +7,7 @@
       var log = function(...args) {
         document.getElementById("status").innerHTML += "\n" + args;
       }
-      var Kahoot = require("kahoot.js");
+      var Kahoot = require("./src/kahoot.js");
       var client = new Kahoot;
       log("Joining kahoot...");
       client.join(9802345 /* Or any other kahoot game pin */, "kahoot.js");
