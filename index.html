@@ -8,10 +8,11 @@
         document.getElementById("status").innerHTML += "\n" + args;
       }
       log("Started!");
+      /*
       var Kahoot = require("./src/kahoot.js");
       var client = new Kahoot;
       log("Joining kahoot...");
-      client.join(9802345 /* Or any other kahoot game pin */, "kahoot.js");
+      client.join(9802345, "kahoot.js");
       client.on("joined", () => {
           log("I joined the Kahoot!");
       });
@@ -25,6 +26,7 @@
       client.on("quizEnd", () => {
           log("The quiz has ended.");
       });
+      */
     </script>
     <span id="status">Script loading...</span>
   </body>
