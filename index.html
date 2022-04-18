@@ -1,7 +1,30 @@
-<DOCTYPE html>
-<html lang="en">
-  <head src="src/head.html"></head>
+<html>
+  <head>
+    <title>Spammer</title>
+  </head>
   <body>
-  Updated
+    <script>
+      var log = function(...args) {
+        document.getElementById("status").innerHTML += "\n" + args;
+      }
+      var Kahoot = require("kahoot.js");
+      var client = new Kahoot;
+      log("Joining kahoot...");
+      client.join(9802345 /* Or any other kahoot game pin */, "kahoot.js");
+      client.on("joined", () => {
+          log("I joined the Kahoot!");
+      });
+      client.on("quizStart", quiz => {
+          log("The quiz has started! The quiz's name is:", quiz.name);
+      });
+      client.on("questionStart", question => {
+          log("A new question has started, answering the first answer.");
+          question.answer(0);
+      });
+      client.on("quizEnd", () => {
+          log("The quiz has ended.");
+      });
+    </script>
+    <span id="status">Script loading...</span>
   </body>
 </html>
